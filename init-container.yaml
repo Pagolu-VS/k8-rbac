@@ -10,6 +10,10 @@ spec:
   selector:
     matchLabels:
       app: nginx
+  serviceAccount: aws-secret-reader
+  volumes:
+    - name: sample-secret
+      emptyDir: {}
   template:
     metadata:
       labels:
@@ -32,7 +36,4 @@ spec:
         volumeMounts:
           - mountPath: /tmp
             name: sample-secret
-    serviceAccount: aws-secret-reader
-    volumes:
-      - name: sample-secret
-        emptyDir: {}
+    
