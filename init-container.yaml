@@ -32,7 +32,7 @@ spec:
         volumeMounts:
           - mountPath: /tmp
             name: sample-secret
-    serviceAccount: roboshop-mysql-secret-reader
+    serviceAccount: aws-secret-reader
     volumes:
       - name: sample-secret
         emptyDir: {}
