@@ -10,15 +10,15 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  serviceAccount: aws-secret-reader
-  volumes:
-    - name: sample-secret
-      emptyDir: {}
   template:
     metadata:
       labels:
         app: nginx
     spec:
+      serviceAccount: aws-secret-reader
+      volumes:
+      - name: sample-secret
+        emptyDir: {}
       containers:
       - name: nginx
         image: nginx
